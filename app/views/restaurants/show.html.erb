@@ -1,0 +1,19 @@
+<h1><%= @restaurant.name.capitalize %></h1>
+<div style="margin-left:20px">
+<p><h2><%= @restaurant.name.capitalize %></h2><br>
+<strong>Address: </strong><%= @restaurant.address %><br>
+<strong>Category: </strong><%= @restaurant.category %><br>
+<strong>Phone: </strong><%= @restaurant.phone_number %><br></p>
+</div>
+
+<div style="margin-left:20px">
+<p><%= link_to 'Add a new review', new_restaurant_review_path(@restaurant.id) %></p>
+<h3>Reviews : </h3>
+<% @reviews.each do |r| %>
+<p><strong>Comment</strong> : <%= r.content %><br>
+<strong>Rating</strong> : <%= r.rating %></p>
+<% end %>
+</div>
+
+
+<div style="margin-left:20px"><%= link_to "Back", restaurants_path %></div>
